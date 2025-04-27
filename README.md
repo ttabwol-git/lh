@@ -52,7 +52,7 @@ curl --location 'http://localhost:8000/pricing/pre_corona_difference?month=2024-
 - The data has been randomized and goes back to 2023-01-01.
 - Use `2024-01 <= month <= 2025-04` for the current month to get results.
 - Use `currency` with value `EUR`, `JPY`, or `GBP` to get results.
-- All mocked exchange rate data is stored in `USD`.
+- All mocked pricing data is stored in `USD`.
 - Use `hotels` with value between 1 and 5 to get results.
 - Make sure `month - years_ago` is greater than or equal to `2023-01` to get results.
 - Use `cancellable` with value `true` to get results. All records in database are cancellable.
