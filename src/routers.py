@@ -23,12 +23,16 @@ async def get_price_difference(
     engine: Engine = Depends(Engine),
 ):
     logger.info(f"{request.method} - {request.url.path}")
-    response = await engine.find_hotel_prices(
-        month=month,
-        hotels=hotels,
-        currency=currency,
-        years_ago=years_ago,
-        cancellable=cancellable,
-    )
-    logger.success("Prices fetched successfully")
+    response = []
+    try:
+        response = await engine.find_hotel_prices(
+            month=month,
+            hotels=hotels,
+            currency=currency,
+            years_ago=years_ago,
+            cancellable=cancellable,
+        )
+        logger.success("Prices fetched successfully")
+    except Exception as e:
+        logger.error(f"Error fetching prices: {e}")
     return PriceResponse(prices=response)
