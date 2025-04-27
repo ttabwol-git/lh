@@ -43,7 +43,16 @@ uvicorn main:app --log-level critical
 
 ## 3. API Example Request
 ```bash
-curl --location 'http://localhost:8000/pricing/pre_corona_difference?month=2024-11&currency=EUR&hotels=1&hotels=2&hotels=3&years_ago=1&cancellable=true'
+curl --location 'http://localhost:8000/pricing/pre_corona_difference' \
+  --get \
+  --data-urlencode "month=2024-11" \
+  --data-urlencode "currency=EUR" \
+  --data-urlencode "hotels=1" \
+  --data-urlencode "hotels=2" \
+  --data-urlencode "hotels=3" \
+  --data-urlencode "years_ago=1" \
+  --data-urlencode "cancellable=true"
+
 ```
 
 ## 4. Notes
