@@ -23,3 +23,14 @@ sequenceDiagram
     Engine->>Router: Return aggregated prices as a list of PriceResponseItem
     Router->>User: Return JSON response
 ```
+
+## 2. Run the Code
+```bash
+git clone git@github.com:ttabwol-git/lh.git
+cd lh
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+deactivate; source .venv/bin/activate
+uvicorn main:app --log-level critical
+```
